@@ -22,6 +22,13 @@ PokeApi.getPokemonDetail = (pokemon) => {
         .then(convertPokeApiDetailToPokemon)
 }
 
+PokeApi.getPokemonById = (pokemonId) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`
+    return fetch(url)
+        .then((response) => response.json())
+        .then(convertPokeApiDetailToPokemon)
+}
+
 PokeApi.getPokemons = (offset = 0, limit = 20) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
 
@@ -31,3 +38,14 @@ PokeApi.getPokemons = (offset = 0, limit = 20) => {
         .then((pokemons) => pokemons.map(PokeApi.getPokemonDetail))
         .then((detailRequests) => Promise.all(detailRequests))
 }
+
+PokeApi.getTeste = (offset = 0, limit = 20) => {
+    const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+
+    return fetch(url)
+        .then((response) => response.json())
+        .then((jsonBody) => console.log(jsonBody.results))
+}
+
+PokeApi.getTeste()
+
