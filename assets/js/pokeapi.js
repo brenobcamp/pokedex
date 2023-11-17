@@ -49,3 +49,5 @@ PokeApi.getTeste = (offset = 0, limit = 20) => {
 
 PokeApi.getTeste()
 
+console.log(PokeApi.getPokemonById(1))
+

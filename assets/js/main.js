@@ -10,8 +10,11 @@ function mostrarPopUp (pokemonNumber) {
 
     const conteudoPopUp = document.createElement('div');
     conteudoPopUp.className = 'conteudo-popup';
-    const pokemonDetail = PokeApi.getPokemonById(pokemonNumber)
-    conteudoPopUp.innerHTML = pokemonDetail.name;
+    const pokemonDetail = PokeApi.getPokemonById(pokemonNumber).then(promessa => promessa.json())
+    console.log(pokemonNumber)
+    console.log(pokemonDetail)
+    console.log(pokemonDetail.name)
+    conteudoPopUp.innerHTML = pokemonDetail;
   
   // Botão para fechar o pop-up
     var botaoFechar = document.createElement('button');
