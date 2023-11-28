@@ -3,7 +3,6 @@ const limit = 20;
 const maxRecords = 151;
 const listPokemons = document.querySelector('#pokemonList')
 const loadMoreBtn = document.querySelector('#loadMoreButton');
-// Criando janela popup
 const janelaPopup = document.createElement('div');
 const divFecharJanelaPopup = document.createElement('div');
 const divNomeImagemPokemon = document.createElement('div');
